@@ -47,6 +47,10 @@ body{
 }
 /* Desktop & Wide Screen Device */
 @media screen and (min-width: 64em){
+  .container{
+    max-width: 1600px;
+    margin: 0 auto;
+  }
   .header, .ad{
     order: -2;
   }
