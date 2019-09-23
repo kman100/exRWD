@@ -1,0 +1,19 @@
+@charset "utf-8";
+/*mobile css*/
+html{font-size: 10px;}
+body{
+  background: #d00;
+}
+/*tablet, laptop css*/
+html{font-size: 15px;}
+@media screen and (min-width:50em){
+  body{
+    background: #368855;
+  }
+/*wide Screen css*/
+@media screen and (min-width:64em){
+  html{font-size: 20px;}
+  body{
+    background: #789521;
+  }
+}
