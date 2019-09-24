@@ -1,3 +1,143 @@
 @charset "utf-8";
-@import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-*,*::before,*::after { font-family: 'Spoqa Han Sans', 'Sans-serif'; }
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+*, *::before, *::after { 
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; 
+} 
+
+/**/
+*, *::before, *, *::after{
+  box-sizing: border-box;
+}
+fieldset{
+  border: 0 none;
+  padding: 0;
+}
+legend, a11y-hidden{
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0,0 0,0 0)
+}
+a{
+  text-decoration: none;
+  color:inherit;
+}
+
+/* All Style */
+body{
+  color:#181818;
+}
+.flexbox{
+  background: silver;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.container > *, .main-content > *{
+  flex: 0 1 100%;
+}
+.header{
+  background: yellow;
+}
+.navigation{
+  background: brown;
+}
+.main-content{
+  background: aquamarine;
+}
+.recommend-book{
+  background: orange;
+}
+.news{
+  background: lime;
+}
+.board{
+  background: teal;
+}
+.favorite-site{
+  background: gold;
+}
+.twitter{
+  background: skyblue;
+}
+.footer{
+  background: pink;
+}
+/* logo */
+.logo{
+  margin: 0;
+}
+/* member */
+.member{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  justify-content:flex-end;
+}
+
+
+/* Mobile Style */
+@media screen and (max-width: 62.5em){
+  .header{
+    background: #38302e;
+
+  }
+  .header > *{
+    width: 100%;
+    padding: 0 20px;
+  }
+  .member{
+    order: -1;
+    background: #988574;
+    color:#fff;
+    
+  }
+  .member a{
+    padding: 0.5em;
+    margin-left:0.5em; 
+    display: block;
+    margin-right: -0.5em;
+  }
+}
+
+
+/* .navigation{
+  order: 1;
+} */
+/* Desktop Style */
+@media screen and (min-width: 62.5em){
+  .container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-content > *{
+    flex: 0 1 auto;
+  }
+  .navigation{
+    width: 100%;
+  }
+  .header, .main-content, .footer{
+    /* flex: 0 1 1000px; */
+    width: 1000px;
+    /* margin: 0 auto; */
+  }
+  .recommend-book, .board{
+    /* width: 320px; */
+    width: calc(65px * 4 + 20px * 3);
+  }
+  .news{
+    width: calc(65px * 8 + 20px * 7);
+    margin-left: 20px;
+  }
+  .favorite-site{
+    width: calc(65px * 3 + 20px * 2);
+    margin-left: 20px;
+  }
+  .twitter{
+    width: calc(65px * 5 + 20px * 4);
+    margin-left: 20px;
+  }
+}
