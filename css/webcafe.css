@@ -25,13 +25,17 @@ a{
   text-decoration: none;
   color:inherit;
 }
+.a11y-hidden{
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+}
 
 /* All Style */
 body{
   color:#181818;
 }
 .flexbox{
-  background: silver;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -39,9 +43,7 @@ body{
 .container > *, .main-content > *{
   flex: 0 1 100%;
 }
-.header{
-  background: yellow;
-}
+
 .navigation{
   background: brown;
 }
@@ -69,6 +71,7 @@ body{
 /* logo */
 .logo{
   margin: 0;
+
 }
 /* member */
 .member{
@@ -83,11 +86,10 @@ body{
 @media screen and (max-width: 62.5em){
   .header{
     background: #38302e;
-
   }
   .header > *{
     width: 100%;
-    padding: 0 20px;
+    padding:0.3em 20px;
   }
   .member{
     order: -1;
@@ -101,9 +103,66 @@ body{
     display: block;
     margin-right: -0.5em;
   }
+ 
+  .search input[type="search"]{
+    width:calc(100% - 3em);
+    border: 1px solid #aaa;
+    border-radius: 0.35em;
+    padding: 1px 1px 1px 0.5em;
+    height: 2em;
+    margin-right: 0.5em;
+}
+.btn-search{
+ background: transparent;
+  border: 0;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+}
+.btn-search::after{
+  content: "";
+  background: url(./images/btn_search.png) no-repeat;
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.btn-menubar{
+  background: blue;
+  position: absolute;
+  top: 3.5em;
+  right:20px;
+  cursor: pointer;
+}
+.menu{
+  transform: translateX(-100%);
+  list-style: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.85);
+  color:#fff;
+  margin: 0;
+  top:0;
+  left: 0;
+  width: 70vw;
+  height: 100vh;
+  padding: 1.5em 1em 1.5em 40px;
+}
+.menu-list{
+  margin: 1em 0;
+}
+.sub-menu{
+list-style: disc;
+}
+.sub-menu li{
+margin: 0.5em 0;
+display: none;
 }
 
-
+}
 /* .navigation{
   order: 1;
 } */
@@ -124,6 +183,62 @@ body{
     width: 1000px;
     /* margin: 0 auto; */
   }
+  .header{
+   position: relative;
+   flex-basis: auto;
+   padding: 0.5em 0;
+   }
+
+  .logo{
+    position: absolute;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+  }
+  .member{
+   width: 100%;
+   
+  }
+  .member a{
+    padding: 0.5em;
+    display: block;
+    margin: -0.5em 0.5em;
+  }
+  .member li{
+    border-left:1px solid #000;
+    margin: 0.5em 0;
+  }
+  .member li:nth-child(n+2){
+    border-left:1px solid #000;
+  }
+  .member li:first-child{
+    border-left:0;
+  }
+  .search *{
+    vertical-align: middle;
+  }
+ .search{
+  width: 100%;
+  text-align:right;
+  margin-top: 1em;
+  }
+  .search input[type="search"]{
+    border: 1px solid #aaa;
+    border-radius: 0.35em;
+    padding: 1px 1px 1px 0.5em;
+    height: 2em;
+    width: 40%;
+  }
+  .btn-search{
+    height: 2em;
+    border: 1px solid #aaa;
+    background: #988574;
+    border-radius: 0.35em;
+    margin-left: 0.5em;
+    cursor: pointer;
+    color:#fff;
+    padding: 0 0.5em;
+  }
   .recommend-book, .board{
     /* width: 320px; */
     width: calc(65px * 4 + 20px * 3);
@@ -139,5 +254,8 @@ body{
   .twitter{
     width: calc(65px * 5 + 20px * 4);
     margin-left: 20px;
+  }
+  .btn-menubar{
+    display: none;
   }
 }
