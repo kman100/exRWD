@@ -202,6 +202,9 @@ body{
     list-style: disc;
     display: none;
   }
+  .menu-act .sub-menu{
+    display: block;
+  }
   .sub-menu li{
     margin: 0.5em 0;
   }
